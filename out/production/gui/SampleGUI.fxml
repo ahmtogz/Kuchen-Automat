@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox alignment="TOP_CENTER" prefHeight="750.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGUI">
+    <children>
+            <!-- Liste der Hersteller -->
+            <HBox alignment="CENTER" spacing="10.0">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <VBox spacing="5.0">
+                    <Label text="Hersteller Liste"/>
+                    <ListView fx:id="herstellerList" prefHeight="160.0" prefWidth="150.0"/>
+                </VBox>
+
+                <!-- Liste der Hersteller mit Anzahl -->
+                <VBox spacing="5.0">
+                    <Label text="Mit Anzahl"/>
+                    <ListView fx:id="herstellerListMitAnzahl" prefHeight="160.0" prefWidth="150.0"/>
+                </VBox>
+
+                <!-- Einfügen und Entfernen von Herstellern -->
+                <VBox spacing="5.0" >
+                    <Label  text="Hersteller"/>
+                    <VBox spacing="5.0" prefHeight="160.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-padding: 5px;">
+                        <VBox spacing="5.0" alignment="CENTER" style="-fx-padding: 20px 0 0 0;">
+                            <TextField fx:id="herstellerNameField" promptText="Hersteller" prefWidth="105" prefHeight="20" />
+                        </VBox>
+                        <VBox spacing="5.0" alignment="CENTER" style="-fx-padding: 30px 0 0 0;">
+                            <Button fx:id="einfuegenHerstellerButton" prefWidth="105" prefHeight="20" onMouseClicked="#einfuegenHerstellerClicked" text="Einfügen"/>
+                            <Button fx:id="entfernenHerstellerButton" prefWidth="105" prefHeight="20" onMouseClicked="#entfernenHerstellerClicked" text="Entfernen"/>
+                        </VBox>
+                    </VBox>
+                </VBox>
+
+
+                <!-- Kuchen Sortieren -->
+                <VBox spacing="5.0" >
+                    <Label alignment="CENTER" text="Sortieren"/>
+                    <VBox alignment="CENTER" prefHeight="160.0" spacing="5.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-padding: 5px;">
+                        <Button fx:id="mitFachnrSortButton" prefWidth="105" prefHeight="20" text="Fachnr Sort" onMouseClicked="#mitFachnrSortClicked"/>
+                        <Button fx:id="mitHerstellerSortButton" prefWidth="105" prefHeight="20" text="Hersteller Sort" onMouseClicked="#mitHerstellerSortClicked"/>
+                        <Button fx:id="mitInspektSortButton" prefWidth="105" prefHeight="20" text="Inspekt Sort" onMouseClicked="#mitInspektSortClicked"/>
+                        <Button fx:id="mitHaltbarkeitSortButton" prefWidth="105" prefHeight="20" text="Haltbarkeit Sort" onMouseClicked="#mitHaltbarkeitSortClicked"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Persistierung -->
+                <VBox spacing="5.0">
+                    <Label alignment="CENTER" text="Persistierung"/>
+                    <VBox spacing="5.0" prefHeight="160.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-padding: 5px;">
+                        <HBox spacing="5.0" alignment="CENTER" style="-fx-padding: 20px 0 0 0;">
+                            <RadioButton fx:id="rad_jos" text="JOS"/>
+                            <RadioButton fx:id="rad_jbp" text="JBP"/>
+                        </HBox>
+                        <VBox spacing="5.0" alignment="CENTER" style="-fx-padding: 30px 0 0 0;">
+                            <Button fx:id="speichernButton" prefWidth="105" prefHeight="20" text="Speichern" onMouseClicked="#speichernClicked"/>
+                            <Button fx:id="aufladenButton" prefWidth="105" prefHeight="20" text="Aufladen" onMouseClicked="#aufladenClicked"/>
+                        </VBox>
+                    </VBox>
+
+
+                </VBox>
+            </HBox>
+
+            <!-- Liste der Kuchen -->
+            <VBox spacing="10.0" style="-fx-padding: 10;">
+                <Label text="Kuchen Liste"/>
+                <ListView fx:id="kuchenList" prefHeight="160.0" prefWidth="700.0"/>
+            </VBox>
+
+            <!-- Filterung der Kuchen -->
+        <HBox alignment="CENTER" spacing="10.0" style="-fx-padding: 10px 10px 10px 10px;">
+            <VBox spacing="5.0" >
+                <VBox spacing="5.0" prefHeight="130.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-padding: 5px;">
+                    <Label text="KuchenTyp"/>
+                    <VBox spacing="5.0" style="-fx-padding: 20px 0 0 0;">
+                        <RadioButton fx:id="rad_obstkuchen" text="Obstkuchen"/>
+                        <RadioButton fx:id="rad_kremkuchen" text="Kremkuchen"/>
+                        <RadioButton fx:id="rad_obsttorte" text="Obsttorte"/>
+                    </VBox>
+
+                </VBox>
+            </VBox>
+
+            <VBox spacing="5.0" >
+                <VBox spacing="5.0" prefHeight="130.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-padding: 5px;">
+                    <Label text="Allergens"/>
+                    <CheckBox fx:id="check_gluten" text="Gluten"/>
+                    <CheckBox fx:id="check_sesamsamen" text="Sesamsamen"/>
+                    <CheckBox fx:id="check_erdnuss" text="Erdnuss"/>
+                    <CheckBox fx:id="check_haselnuss" text="Haselnuss"/>
+                </VBox>
+            </VBox>
+            <VBox spacing="5.0">
+                <VBox spacing="10.0" prefHeight="130.0" style="-fx-border-color: black; -fx-border-width: 1px; -fx-padding: 5px;">
+                    <HBox spacing="10.0">
+                        <VBox spacing="10.0">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <TextField fx:id="obstField" prefWidth="80" prefHeight="20" promptText="Obst Sorte"/>
+                            <TextField fx:id="kremField" prefWidth="80" prefHeight="20" promptText="Krem Sorte"/>
+                        </VBox>
+                        <VBox spacing="10.0">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <TextField fx:id="preisField" prefWidth="80" prefHeight="20" promptText="Preis: €"/>
+                            <TextField fx:id="naehrwertField" prefWidth="80" prefHeight="20" promptText="Nährwert"/>
+                            <TextField fx:id="haltbarkeitField" prefWidth="80" prefHeight="20" promptText="Haltbarkeit"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+
+            <VBox spacing="5.0" >
+                <VBox spacing="5.0" prefHeight="130.0" style=" -fx-border-width: 5px; -fx-padding: 5px;">
+                    <Button fx:id="einfuegenKuchenButton" prefWidth="100" prefHeight="20" text="Einfügen" onMouseClicked="#einfuegenKuchenClicked"/>
+                    <TextField fx:id="entfernenUndAendernFachnrField" prefWidth="100" prefHeight="20" promptText="Fachnummer"/>
+                    <Button fx:id="entfernenKuchenButton" prefWidth="100" prefHeight="20" text="Entfernen" onMouseClicked="#entfernenKuchenClicked"/>
+                    <Button fx:id="aendernKuchenButton" prefWidth="100" prefHeight="20" text="Ändern" onMouseClicked="#aendernKuchenClicked"/>
+
+                </VBox>
+            </VBox>
+
+        </HBox>
+
+
+    </children>
+</VBox>
+
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17.0.3" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Automat">
+    <void property="kuchenList">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="ObsttorteImp">
+        <object class="java.lang.Enum" method="valueOf">
+         <class>kuchen.Kuchentyp</class>
+         <string>Obsttorte</string>
+        </object>
+        <object class="HerstellerImp">
+         <string>Alice</string>
+        </object>
+        <object class="java.math.BigDecimal">
+         <string>7.50</string>
+        </object>
+        <int>632</int>
+        <object class="java.time.Duration" method="parse">
+         <string>PT23H57M47.090643S</string>
+        </object>
+        <object class="java.util.LinkedList">
+         <void method="add">
+          <object class="java.lang.Enum" method="valueOf">
+           <class>kuchen.Allergen</class>
+           <string>Gluten</string>
+          </object>
+         </void>
+        </object>
+        <object class="java.util.Date">
+         <long>1707590601117</long>
+        </object>
+        <int>1</int>
+        <string>Apfel</string>
+        <string>Sahne</string>
+       </object>
+      </void>
+      <void method="add">
+       <object class="ObstkuchenImp">
+        <object class="java.lang.Enum" method="valueOf">
+         <class>kuchen.Kuchentyp</class>
+         <string>Obstkuchen</string>
+        </object>
+        <object class="HerstellerImp">
+         <string>Alice</string>
+        </object>
+        <object class="java.math.BigDecimal">
+         <string>2.50</string>
+        </object>
+        <int>200</int>
+        <object class="java.time.Duration" method="parse">
+         <string>PT19H58M5.089025S</string>
+        </object>
+        <null/>
+        <object class="java.util.Date">
+         <long>1707590619165</long>
+        </object>
+        <int>2</int>
+        <string>Erdbeere</string>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="herstellerList">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="HerstellerImp">
+        <string>Alice</string>
+       </object>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
